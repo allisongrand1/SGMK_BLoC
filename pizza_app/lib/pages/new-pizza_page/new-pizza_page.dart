@@ -88,10 +88,12 @@ class NewPizza extends StatelessWidget {
                               TxField(
                                 name: 'Name',
                                 controller: titleController,
+                                type: TextInputType.text,
                               ),
                               TxField(
                                 name: 'Price',
                                 controller: amountController,
+                                type: TextInputType.number,
                               ),
                             ],
                           ),
@@ -128,11 +130,12 @@ class NewPizza extends StatelessWidget {
 
 // ignore: must_be_immutable
 class TxField extends StatelessWidget {
+  var type;
   // ignore: prefer_typing_uninitialized_variables
   var controller;
   String name;
 
-  TxField({Key? key, required this.controller, required this.name}) : super(key: key);
+  TxField({Key? key, required this.controller, required this.name, required this.type}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -148,10 +151,9 @@ class TxField extends StatelessWidget {
           width: 128,
           height: 32,
           child: TextFormField(
-         textInputAction: TextInputAction.next,
+          keyboardType: type,
             style: const TextStyle(fontSize: 10),
             decoration: InputDecoration(
-              
               border: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(0.0)),
                   borderSide:
@@ -162,7 +164,6 @@ class TxField extends StatelessWidget {
                   onPressed: controller.clear,
                   icon: const Icon(
                     Icons.clear,
-                   
                   ),
                 ),
              
