@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../theme/color.dart';
-import '../../widgets/transaction_list.dart';
+import '../../widgets/pizza_list.dart';
 import '../bloc/home_page_bloc.dart';
 import '../new-pizza_page/new-pizza_page.dart';
 
